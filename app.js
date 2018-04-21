@@ -4,10 +4,10 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
-    //Campground      = require("./models/campground"),
-    //Comment         = require("./models/comment"),
+    Funcionario     = require("./models/funcionario"),
+    Feedback        = require("./models/feedback"),
     methodOverride  = require("method-override"),
-    //User            = require("./models/user"),
+    Paciente        = require("./models/paciente"),
     flash           = require("connect-flash");
     //seedDB          = require("./seeds");
 
