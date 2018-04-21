@@ -6,6 +6,13 @@ var pacienteSchema = new mongoose.Schema({
     fullName: String,
     condicao: String,
     taxa: String,
+    funcionarioResp: {
+      id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Funcionario"
+      },
+      username: String
+    },
     feedbacks: [
         {
             type: mongoose.Schema.Types.ObjectId,
