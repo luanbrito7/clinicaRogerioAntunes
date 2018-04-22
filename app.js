@@ -11,13 +11,13 @@ var express         = require("express"),
     flash           = require("connect-flash");
     //seedDB          = require("./seeds");
 
-// var commentRoutes     = require("./routes/comments"),
-//    indexRoutes       = require("./routes/index"),
-//    campgroundsRoutes = require("./routes/campgrounds");
-var url               = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v4"
-console.log(process.env.DATABASEURL);
-console.log(url);
-mongoose.connect(process.env.DATABASEURL);
+var  indexRoutes        = require("./routes/index");
+     //feedbackRoutes     = require("./routes/feedback"),
+     //pacienteRoutes     = require("./routes/paciente");
+//var url               = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v4"
+//console.log(process.env.DATABASEURL);
+//console.log(url);
+//mongoose.connect(process.env.DATABASEURL);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -44,7 +44,7 @@ app.use(function(req, res, next){
     next();
 });
 
-// app.use(indexRoutes);
+ app.use(indexRoutes);
 // app.use("/campgrounds/:id/comments", commentRoutes);
 // app.use("/campgrounds", campgroundsRoutes);
 
