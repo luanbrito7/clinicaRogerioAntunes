@@ -1,5 +1,5 @@
 body{
-    background: url(https://images.unsplash.com/photo-1516474642997-b86ccf7065a4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4d26ae5d225d25cd1a013a886fe523c&auto=format&fit=crop&w=1534&q=80);
+    background: url(https://images.unsplash.com/photo-1512422403669-e65b1c56724a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eb721010fd6596b150db2e9e0c1ff95e&auto=format&fit=crop&w=1267&q=80);
     background-size: cover;
     background-position: center;
 }
@@ -9,10 +9,10 @@ html {
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
-#navstyle {
-    background-color: transparent;
+#navbarStyle {
+    background-color: rgba(187, 241, 252, 0.14);
 }
-#textNav {
+a .textNav {
     color: white;
     font-size: 200px;
 }
