@@ -4,9 +4,8 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     passport        = require("passport"),
     LocalStrategy   = require("passport-local"),
-    Funcionario     = require("./models/funcionario"),
+    User            = require("./models/user"),
     Feedback        = require("./models/feedback"),
-    Paciente        = require("./models/paciente"),
     methodOverride  = require("method-override"),
     flash           = require("connect-flash");
     //seedDB          = require("./seeds");
@@ -40,11 +39,11 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(Paciente.authenticate()));
-passport.serializeUser(Paciente.serializeUser());
-passport.deserializeUser(Paciente.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 app.use(function(req, res, next){
-    res.locals.currentPaciente = req.paciente;
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     next();

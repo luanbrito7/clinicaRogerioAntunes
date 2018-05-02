@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
-var pacienteSchema = new mongoose.Schema({
+var userSchema = new mongoose.Schema({
     username: {
         type: String,
         require: true,        
@@ -17,15 +17,8 @@ var pacienteSchema = new mongoose.Schema({
         lowercase: true,
     },
     fullName: String,
-    condicao: String,
-    taxa: String,
-    funcionarioResp: {
-      id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Funcionario"
-      },
-      username: String
-    },
+    isFuncionario: { type : Boolean, default : false},
+    isConfirmed: { type :  Boolean , default : false },
     feedbacks: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -34,6 +27,6 @@ var pacienteSchema = new mongoose.Schema({
     ],
 });
 
-pacienteSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("Paciente", pacienteSchema);
+module.exports = mongoose.model("User", userSchema);
