@@ -6,18 +6,24 @@ var express         = require("express"),
     LocalStrategy   = require("passport-local"),
     Funcionario     = require("./models/funcionario"),
     Feedback        = require("./models/feedback"),
-    methodOverride  = require("method-override"),
     Paciente        = require("./models/paciente"),
+    methodOverride  = require("method-override"),
     flash           = require("connect-flash");
     //seedDB          = require("./seeds");
 
 var  indexRoutes        = require("./routes/index");
      //feedbackRoutes     = require("./routes/feedback"),
      //pacienteRoutes     = require("./routes/paciente");
-//var url               = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v4"
+var url               = /*process.env.DATABASEURL || <--*/ "mongodb://localhost/clinicaRogerioAntunes"
 //console.log(process.env.DATABASEURL);
 //console.log(url);
-//mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(url , function(err, db) {
+    if (err) {
+        console.log('Unable to connect to the server. Please start the server. Error:', err);
+    } else {
+        console.log('Connected to Server successfully!');
+    }
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

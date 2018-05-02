@@ -1,8 +1,21 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 var funcionarioSchema = new mongoose.Schema({
-    username: String,
-    password: String,
+    username: {
+        type: String,
+        require: true,        
+    },
+    password:{
+        type: String,
+        require: true,
+        select: false,
+    },
+    email:{
+        type: String,
+        require: true,
+        unique: true,
+        lowercase: true,
+    },
     area: String,
     pacientes: [
         {
