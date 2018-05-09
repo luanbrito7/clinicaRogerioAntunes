@@ -16,19 +16,25 @@ router.get("/register", function(req, res) {
 router.post("/register", function(req, res) {
     var name = req.body.username;
     var pass = req.body.password;
-    // Paciente.register(new Paciente({username: name}), pass, function(err, paciente){
+    var secret = req.body.adminCode;
+    var newUser = new User({username: req.body.username, email: req.body.email });
+    if(req.body.adminCode === 'senhaAdmin' ){
+        newUser.isAdmin = true;
+    }
+    // Paciente.register(newUser, pass, function(err, user){
     //     if(err){
     //         req.flash("error", err.message);
-    //         return res.redirect("register/paciente");
+    //         return res.redirect("register");
     //     } 
     //     passport.authenticate("local")(req, res, function(){
-    //         req.flash("success", "Bem vindo à Clínica " + paciente.username);
+    //         req.flash("success", "Bem vindo à Clínica " + user.username);
     //         res.redirect("/");     
     //     });
     // });
     console.log(name);
     console.log(pass);
     console.log(req.body.email);
+    console.log(secret);
 })
 
 //show login form

@@ -1,10 +1,28 @@
 <% include partials/header %>
 <h1>Cadastre-se</h1>
 
-<form action="/register" method="POST">
-    <input type="text" placeholder="username" name="username">
-    <input type="email" placeholder="email" name="email">
-    <input type="password" placeholder="password" name="password">
-    <button>Cadastre-me</button>
-</form>
+<div class=row>
+    <div class="container">
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <input type="text" placeholder="Username" name="username">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Codigo de funcionário" name="adminCode">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Senha" name="password">
+            </div>
+            <div class="container">
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Cadastre-se!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <% include partials/footer %>

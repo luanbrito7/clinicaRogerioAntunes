@@ -17,8 +17,8 @@ var userSchema = new mongoose.Schema({
         lowercase: true,
     },
     fullName: String,
-    isFuncionario: { type : Boolean, default : false},
-    isConfirmed: { type :  Boolean , default : false },
+    isAdmin: { type : Boolean, default : false},
+    isConfirmed: { type : Boolean, default : false },
     feedbacks: [
         {
             type: mongoose.Schema.Types.ObjectId,
