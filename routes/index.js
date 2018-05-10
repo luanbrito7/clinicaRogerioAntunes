@@ -21,16 +21,17 @@ router.post("/register", function(req, res) {
     if(req.body.adminCode === 'senhaAdmin' ){
         newUser.isAdmin = true;
     }
-    // Paciente.register(newUser, pass, function(err, user){
-    //     if(err){
-    //         req.flash("error", err.message);
-    //         return res.redirect("register");
-    //     } 
-    //     passport.authenticate("local")(req, res, function(){
-    //         req.flash("success", "Bem vindo à Clínica " + user.username);
-    //         res.redirect("/");     
-    //     });
-    // });
+    User.register(newUser, pass, function(err, user){
+        if(err){
+            req.flash("error", err.message);
+            return res.redirect("register");
+        } 
+        passport.authenticate("local")(req, res, function(){
+            req.flash("success", "Bem vindo à Clínica " + user.username);
+            console.log("Você é um funcionário?" + user.isAdmin);
+            res.redirect("/");     
+        });
+    });
     console.log(name);
     console.log(pass);
     console.log(req.body.email);
