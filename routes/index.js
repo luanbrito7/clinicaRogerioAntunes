@@ -17,7 +17,8 @@ router.post("/register", function(req, res) {
     var name = req.body.username;
     var pass = req.body.password;
     var secret = req.body.adminCode;
-    var newUser = new User({username: req.body.username, email: req.body.email });
+    var nome = req.body.nome;
+    var newUser = new User({username: req.body.username, email: req.body.email, fullName: req.body.nome});
     if(req.body.adminCode === 'senhaAdmin' ){
         newUser.isAdmin = true;
     }
@@ -32,6 +33,7 @@ router.post("/register", function(req, res) {
             res.redirect("/");     
         });
     });
+    console.log(nome);
     console.log(name);
     console.log(pass);
     console.log(req.body.email);

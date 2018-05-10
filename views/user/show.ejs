@@ -1,0 +1,9 @@
+<% include partials/header %>
+    <p>Olá <%=currentUser.fullName%>.</p>
+<% if (currentUser && currentUser.isAdmin){ %>
+    Você está cadastrado como um funcionário, isso te permite dar feedbacks aos paciêntes!
+<% } %>
+
+
+
+<% include partials/footer %>
