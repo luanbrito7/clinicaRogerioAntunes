@@ -2,6 +2,13 @@
     <p>Olá <%=currentUser.fullName%>.</p>
 <% if (currentUser && currentUser.isAdmin){ %>
     Você está cadastrado como um funcionário, isso te permite dar feedbacks aos paciêntes!
+    <h1>Pacientes</h1>
+    <% users.forEach(function(user){ %>
+        <% if(!(user.isAdmin)){ %>
+            <h4><%= user.fullName %></h4>
+            <a href="/user/<%= user._id %>">Visualizar</a>
+        <% } %>
+    <% }); %>
 <% } %>
 
 

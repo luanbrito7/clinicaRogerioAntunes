@@ -1,21 +1,21 @@
-// var express = require("express");
-// var router = express.Router();
-// var User = require("../models/user");
-// var Feedback = require("../models/feedback");
-// var middleware = require("../middleware");
+var express = require("express");
+var router = express.Router();
+var User = require("../models/user");
+var Feedback = require("../models/feedback");
+var middleware = require("../middleware");
 
 
-// //INDEX - show all campgrounds
-// router.get("/", function(req, res){
-//     // Get all campgrounds from DB
-//     User.find({}, function(err, allUsers){
-//       if(err){
-//           console.log(err);
-//       } else {
-//           res.render("user/show",{users : allUsers, currentUser:req.user});
-//       }
-//     });
-// });
+//INDEX - show all pacientes
+router.get("/pacientes", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
+    // Get all pacientes from DB
+    User.find({}, function(err, allUsers){
+      if(err){
+          console.log(err);
+      } else{
+          res.render("user/show", {users : allUsers, currentUser:req.user});
+      }
+    });
+});
 
 // //CREATE - add new campground to DB
 // router.post("/", middleware.isLoggedIn, function(req, res){
