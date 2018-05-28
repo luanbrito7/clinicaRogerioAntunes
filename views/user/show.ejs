@@ -1,14 +1,26 @@
 <% include partials/header %>
-    <p>Olá <%=currentUser.fullName%>.</p>
-<% if (currentUser && currentUser.isAdmin){ %>
-    Você está cadastrado como um funcionário, isso te permite dar feedbacks aos paciêntes!
-    <h1>Pacientes</h1>
-    <% users.forEach(function(user){ %>
-        <% if(!(user.isAdmin)){ %>
-            <h4><%= user.fullName %></h4>
-            <a href="/user/<%= user._id %>">Visualizar</a>
-        <% } %>
+<% if(currentUser.isAdmin){ %>
+    <p>Você é um adminstrador, adicione um feedback ao paciente</p>
+<% } %>
+    <h1><%=user.fullName%>.</h1>
+    <% user.feedbacks.forEach(function(feedback){ %>
+        <div class="row">
+            <div class="col-md-12">
+                <strong><%= comment.author.username %></strong>
+                <span class="pull-right">10 days ago</span>
+                <p> <%= comment.text %> </p>
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-warning" href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">
+                            Editar
+                        </a>
+                    <form id="del-form" action="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                    </form>
+                <% } %>
+            </div>
+        </div>
     <% }); %>
+   
 <% } %>
 
 

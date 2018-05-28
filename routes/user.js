@@ -1,18 +1,18 @@
 var express = require("express");
-var router = express.Router();
+var router = express.Router({mergeParams:true});
 var User = require("../models/user");
 var Feedback = require("../models/feedback");
 var middleware = require("../middleware");
 
 
 //INDEX - show all pacientes
-router.get("/pacientes", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
-    // Get all pacientes from DB
+router.get("/", middleware.isLoggedIn, function(req, res){
+    // Get all pacientes from D
     User.find({}, function(err, allUsers){
       if(err){
           console.log(err);
       } else{
-          res.render("user/show", {users : allUsers, currentUser:req.user});
+          res.render("user/index", {users : allUsers, currentUser:req.user});
       }
     });
 });
@@ -46,19 +46,19 @@ router.get("/pacientes", middleware.isLoggedIn, middleware.isAdmin, function(req
 //   res.render("campgrounds/new"); 
 // });
 
-// // SHOW - shows more info about one campground
-// router.get("/:id", function(req, res){
-//     //find the campground with provided ID
-//     Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
-//         if(err || !foundCampground){
-//             req.flash("error", "Campground não encontrado");
-//             res.redirect("back");
-//         } else {
-//             //render show template with that campground
-//             res.render("campgrounds/show", {campground: foundCampground});
-//         }
-//     });
-// });
+// SHOW - shows more info about one pacient
+router.get("/:id", function(req, res){
+    //find the pacient with provided ID
+    User.findById(req.params.id).populate("feedbacks").exec(function(err, foundUser){
+        if(err || !foundUser){
+            req.flash("error", "Paciente não encontrado");
+            res.redirect("back");
+        } else {
+            //render show template with that user
+            res.render("user/show", {user: foundUser, currentUser: req.user});
+        }
+    });
+});
 // //EDIT CAMPGROUND
 // router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res) {
 //     Campground.findById(req.params.id, function(err, found){
@@ -92,4 +92,4 @@ router.get("/pacientes", middleware.isLoggedIn, middleware.isAdmin, function(req
 
 
 
-// module.exports = router;
+module.exports = router;

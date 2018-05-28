@@ -1,6 +1,6 @@
-var Paciente        = require("../models/campground"),
-    Feedback        = require("../models/comment"),
-    Funcionario     = require("../models/funcionario"),
+var Paciente        = require("../models/user"),
+    Feedback        = require("../models/feedback"),
+    // Funcionario     = require("../models/funcionario"),
     middlewareObj   = {};
 middlewareObj.checkFuncionarioResponsavel = function(req, res, next){
     if(req.isAuthenticated()){

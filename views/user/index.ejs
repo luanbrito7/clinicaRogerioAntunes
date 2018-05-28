@@ -1,0 +1,31 @@
+<% include ../partials/header %> 
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Pacientes</h1>
+             <p>Veja os pacientes de toda a clínica</p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% users.forEach(function(paciente){ %>
+            <% if(!paciente.isAdmin){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                        
+                       <!--<img src="<//%= paciente.image %>">-->
+                       
+                       <div class="caption">
+                           <h4><%= paciente.fullName %></h4>
+                       </div>
+                       <p>
+                           <a href="/pacientes/<%= paciente._id %>" class="btn btn-primary">Mais informações!</a>
+                       </p>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

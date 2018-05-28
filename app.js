@@ -10,9 +10,9 @@ var express         = require("express"),
     flash           = require("connect-flash");
     //seedDB          = require("./seeds");
 
-var  indexRoutes        = require("./routes/index");
-     //feedbackRoutes     = require("./routes/feedback"),
-     //pacienteRoutes     = require("./routes/paciente");
+var  indexRoutes        = require("./routes/index"),
+    //  feedbackRoutes     = require("./routes/feedback"),
+     pacienteRoutes     = require("./routes/user");
 var url               = /*process.env.DATABASEURL || <--*/ "mongodb://localhost/clinicaRogerioAntunes"
 //console.log(process.env.DATABASEURL);
 //console.log(url);
@@ -49,9 +49,9 @@ app.use(function(req, res, next){
     next();
 });
 
- app.use(indexRoutes);
+app.use(indexRoutes);
 // app.use("/campgrounds/:id/comments", commentRoutes);
-// app.use("/campgrounds", campgroundsRoutes);
+app.use("/pacientes", pacienteRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Clínica Rogério Antunes is started");
