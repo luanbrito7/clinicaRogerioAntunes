@@ -52,10 +52,20 @@ middlewareObj.isLoggedIn = function isLoggedIn(req, res, next){
     res.redirect("/login");
 };
 middlewareObj.isAdmin = function isAdmin(req, res, next){
-    if(req.isAuthenticated() && req.params.isAdmin){
-        return next();
+    var isIt = req.params.isAdmin;
+    console.log(isIt);
+    if(req.isAuthenticated()){
+        if(req.user.isAdmin){
+            return next();
+        } else{
+            req.flash("error", "Você não tem permissão para fazer isso.");
+            res.redirect("/");
+        }
+    } else{
+        req.flash("error", "Você precisa estar logado para fazer isso.");
+        res.redirect("/login");
     }
-    req.flash("error", "Você não tem permissão para fazer isso.");
-    res.redirect("/");
 };
+
+
 module.exports = middlewareObj;

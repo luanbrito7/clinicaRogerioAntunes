@@ -6,7 +6,7 @@ var middleware = require("../middleware");
 
 
 //INDEX - show all pacientes
-router.get("/", middleware.isLoggedIn, function(req, res){
+router.get("/", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
     // Get all pacientes from D
     User.find({}, function(err, allUsers){
       if(err){
@@ -47,7 +47,7 @@ router.get("/", middleware.isLoggedIn, function(req, res){
 // });
 
 // SHOW - shows more info about one pacient
-router.get("/:id", function(req, res){
+router.get("/:id", middleware.isLoggedIn, function(req, res){
     //find the pacient with provided ID
     User.findById(req.params.id).populate("feedbacks").exec(function(err, foundUser){
         if(err || !foundUser){
