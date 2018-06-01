@@ -52,8 +52,6 @@ middlewareObj.isLoggedIn = function isLoggedIn(req, res, next){
     res.redirect("/login");
 };
 middlewareObj.isAdmin = function isAdmin(req, res, next){
-    var isIt = req.params.isAdmin;
-    console.log(isIt);
     if(req.isAuthenticated()){
         if(req.user.isAdmin){
             return next();

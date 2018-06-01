@@ -6,10 +6,10 @@ var feedbackSchema = mongoose.Schema({
     data: String,
     title: String,
     text: String,
-    funcionario: {
+    autor: {
         id:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Funcionario"
+            ref: "User"
         },
         username: String
     }

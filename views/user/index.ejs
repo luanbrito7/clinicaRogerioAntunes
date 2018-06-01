@@ -17,13 +17,14 @@
                        
                        <div class="caption">
                            <h4><%= paciente.fullName %></h4>
+                           <h3><%= paciente.username %></h3>
                        </div>
                        <p>
-                           <a href="/pacientes/<%= paciente._id %>" class="btn btn-primary">Mais informações!</a>
+                           <a href="/pacientes/<%=paciente._id%>" class="btn btn-primary">Mais informações!</a>
                        </p>
                     </div>
                 </div>
-            <% } %>
+            <% }%>
         <% }); %>
     </div>
 </div>

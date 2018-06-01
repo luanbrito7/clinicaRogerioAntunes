@@ -7,7 +7,7 @@ var middleware = require("../middleware");
 
 //INDEX - show all pacientes
 router.get("/", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
-    // Get all pacientes from D
+    // Get all pacientes from DB
     User.find({}, function(err, allUsers){
       if(err){
           console.log(err);
