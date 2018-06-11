@@ -11,7 +11,7 @@ var express         = require("express"),
     //seedDB          = require("./seeds");
 
 var  indexRoutes        = require("./routes/index"),
-    //  feedbackRoutes     = require("./routes/feedback"),
+     feedbackRoutes     = require("./routes/feedbacks"),
      pacienteRoutes     = require("./routes/user");
 var url               = /*process.env.DATABASEURL || <--*/ "mongodb://localhost/clinicaRogerioAntunes"
 //console.log(process.env.DATABASEURL);
@@ -50,7 +50,7 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
-// app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/pacientes/:id/feedbacks", feedbackRoutes);
 app.use("/pacientes", pacienteRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){

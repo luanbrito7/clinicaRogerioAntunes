@@ -2,6 +2,7 @@
 
 <%= user.username %>
 <%= user.fullName %>
+<a class="btn btn-success" href="/pacientes/<%= user._id %>/feedbacks/new">Add um novo feedback</a>
 <% user.feedbacks.forEach(function(feedback){ %>
     <div class="row">
         <div class="col-md-12">
