@@ -21,7 +21,7 @@ router.post("/", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
            console.log(err);
            res.redirect("/pacientes");
        } else {
-        Feedback.create(req.body.feedback, function(err, feedback){
+           Feedback.create(req.body.feedback, function(err, feedback){
            if(err){
                req.flash("error", "Algo deu errado!");
                console.log(err);
@@ -38,6 +38,17 @@ router.post("/", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
         });
        }
    });
+});
+
+router.delete("/:feedback_id", middleware.isLoggedIn, middleware.isAdmin , function(req, res){  //alterar feedbackOwnership p permitir o próprio paciênte excluir o feedback. (?)
+   Feedback.findByIdAndRemove(req.params.feedback_id, function(err, foundFeedback){
+       if(err){
+           res.redirect("back");
+       } else{
+           req.flash("success", "Feedback removido");
+           res.redirect("/pacientes/" + req.params.id);
+       }
+   }) 
 });
    
 module.exports = router;

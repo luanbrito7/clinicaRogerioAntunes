@@ -11,10 +11,10 @@
             <%= feedback.text %> 
         </p>
         <% if(currentUser && feedback.autor.id.equals(currentUser._id)){ %>
-            <a class="btn btn-xs btn-warning" href="/campgrounds/<%=user._id%>/comments/<%=feedback._id%>/edit">
+            <a class="btn btn-xs btn-warning" href="/pacientes/<%=user._id%>/feedbacks/<%=feedback._id%>/edit">
                 Edit
             </a>
-            <form id="del-form" action="/campgrounds/<%=user._id%>/comments/<%=feedback._id%>?_method=DELETE" method="POST">
+            <form id="del-form" action="/pacientes/<%=user._id%>/feedbacks/<%=feedback._id%>?_method=DELETE" method="POST">
                 <input type="submit" class="btn btn-xs btn-danger" value="Delete">
             </form>
         <% } %>
