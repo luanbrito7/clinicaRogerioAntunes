@@ -50,5 +50,31 @@ router.delete("/:feedback_id", middleware.isLoggedIn, middleware.isAdmin , funct
        }
    }) 
 });
+
+router.get("/:feedback_id/edit", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
+    User.findById(req.params.id, function(err, foundUser) {
+        if(err || !foundUser){
+            req.flash("error", "Usuário não encontrado");
+            return res.redirect();
+        }
+        Feedback.findById(req.params.feedback_id, function(err, foundFeedback){
+           if(err){
+               res.redirect("back");
+           } else {
+               res.render("feedbacks/edit", {paciente_id:req.params.id, feedback:foundFeedback});
+           }
+    });
+    })
+});
+
+router.put("/:feedback_id", middleware.isLoggedIn, middleware.isAdmin, function(req, res){
+   Feedback.findByIdAndUpdate(req.params.feedback_id, req.body.feedback, function(err, foundFeedback){
+      if(err){
+          res.redirect("back");
+      } else {
+          res.redirect("/pacientes/" + req.params.id);
+      }
+   });
+});
    
 module.exports = router;
