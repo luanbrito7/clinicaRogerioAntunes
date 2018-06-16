@@ -1,19 +1,33 @@
-body{
-background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*body{*/
+/*background: #000428; */
+/*background: -webkit-linear-gradient(to right, #004e92, #000428); */
+/*background: linear-gradient(to right, #004e92, #000428); */
 
 
 /*background: #2C3E50;  */
 /*background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  */
 /*background: linear-gradient(to right, #4CA1AF, #2C3E50); */
 
-}
-html {
-    width: 100%;
+/*}*/
+
+html,
+body,
+header,
+#intro{
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
+}
+#intro {
+    background:url("https://images.unsplash.com/photo-1500673587002-1d2548cfba1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c1d231a1cfb5fd0d6ea3ae4568ace64&auto=format&fit=crop&w=750&q=80")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-backgrund-size:cover;
+    background-size: cover;
+}
+.mask{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.65);
 }
 #navbarStyle {
     background-color: rgba(244, 248, 255, 1);
