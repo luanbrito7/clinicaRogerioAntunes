@@ -32,21 +32,21 @@ header,
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,0.65);
+    background-color: rgba(0,0,0,0.8);
 }
-#navbarStyle {
-    background-color: rgba(244, 248, 255, 1);
+.navbar {
+    background-color:#e3f2fd;
 }
-a, .textNav {
-    color: rgb(0, 46, 122);
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-#textNavBIG {
-    color: rgb(0, 46, 122);
-    font-size: 25px;
-    font-weight: 900;
-}
+/*a, .textNav {*/
+/*    color: rgb(0, 46, 122);*/
+/*    font-size: 20px;*/
+/*    font-family: 'Montserrat', sans-serif;*/
+/*}*/
+/*#textNavBIG {*/
+/*    color: rgb(0, 46, 122);*/
+/*    font-size: 25px;*/
+/*    font-weight: 900;*/
+/*}*/
 .content{
 	padding-top: 15%;
 	text-align: center;
@@ -64,8 +64,5 @@ hr {
     width: 400px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-body {
-    padding-top: 65px;
 }
 

@@ -13,40 +13,35 @@
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
-        <nav class="navbar fixed-top navbar-expand-lg center" id="navbarStyle">
-          <a class="navbar-brand" href="/" class="textNav" id="textNavBIG">Clínica Rogério Antunes</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#" class="textNav">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" class="textNav">Pricing</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="textNav">
-                  Localização
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Boa Viagem</a>
-                  <a class="dropdown-item" href="#">Torreão</a>
-                </div>
-              </li>
-            </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>                    
-                    <% }else{ %>
-                        <li><a href="#">Signed In As <%=currentUser.username%></a></li>
-                        <li><a href="/logout">Logout</a></li>
-                    <% } %>
-                </ul>
-          </div>
-        </nav>
+     <nav class="navbar navbar-expand-md navbar-light sticky-top">
+       <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="collapse_target">
+        <a class="navbar-brand"></a>
+        <span class="navbar-text"></span>
+        <ul class="navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link" href="#">Link 1</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+             Link DD <span class="caret"></span>  
+           </a>
+           <div class="dropdown-menu" aria-labelledby="dropdown_target">
+             <a class="dropdown-item" href="/">Boa Viagem</a>
+             <a class="dropdown-item" href="/">Torreão</a>
+           </div>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Link 1</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="#">Link 1</a>
+         </li>
+        </ul>
+       </div>
+     </nav>
         <div class="container">
             <% if(error && error.length>0){ %>
                 <div class="alert alert-danger" role="alert">
