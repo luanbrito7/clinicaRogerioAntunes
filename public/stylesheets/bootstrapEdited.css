@@ -34,12 +34,16 @@ body {
                  0px 18px 23px rgba(0,0,0,0.1);
 }
 .servicos {
-    min-height: 400px;
-    height: 100%;
-    width: 100%;
+    min-height: 350px;
     background-color: white;
     margin-top: 3em;
     border: 2px solid #9bc1ff;
+    padding-top: 1em;
+}
+.servicos-text {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 600;
 }
 #div-servicos {
     padding-top: 3em;
@@ -59,6 +63,12 @@ body {
 }
 .navbar {
     background-color:#e3f2fd;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(0, 46, 122);
+    font-size: 15px;
+    font-weight: 200;
 }
 .alerta {
     position: absolute;
@@ -90,6 +100,12 @@ h1 {
 h2 {
     text-align: center;
     color: rgb(0, 46, 122);
+    font-size: 25px;
+    font-weight: 600;
+}
+h5 {
+    text-align: center;
+    color: rgb(86, 151, 255);
     font-size: 25px;
     font-weight: 600;
 }

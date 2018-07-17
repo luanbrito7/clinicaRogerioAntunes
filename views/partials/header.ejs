@@ -13,14 +13,14 @@
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body>
-      <nav class="navbar navbar-expand-md navbar-light sticky-top">
+      <nav class="navbar navbar-expand-md navbar-light sticky-top fixed-top">
           <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
-                      <a class="nav-link" href="#">Sobre</a>
+                      <a class="nav-link" href="#sobrenos">Sobre</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="//codeply.com">Codeply</a>
+                      <a class="nav-link" href="#servicos">Serviços</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#">Link</a>
@@ -49,7 +49,7 @@
                       <a class="nav-link" href="/register">Cadastro</a>
                   </li>
                 <% }else{ %>
-                  <li><a class="nav-link" href="#">Olá, <%=currentUser.username%></a></li>
+                  <li><a class="nav-link">Olá, <%=currentUser.username%></a></li>
                   <li><a class="nav-link" href="/logout">Sair</a></li>
                 <% } %>
               </ul>
