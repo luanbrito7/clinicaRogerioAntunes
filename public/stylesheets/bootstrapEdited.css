@@ -1,49 +1,8 @@
 html,
 body {
-    margin:0 ;
-    padding: 0;
     height: 100%;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-}
-#footer {
-    height: 250px;
-    width: 100%;
-    background-color:#e3f2fd;
-}
-#copyright {
-    text-align: center;
-    padding-top: 48px;
-    line-height: 26px;
-    color: rgb(0, 46, 122);
-    font-weight: 600;
-    font-size: 20px;
-    margin: 0;
-}
-.social-media-icons {
-    height: 40px;
-    width: 40px;
-    margin-top: 50px;
-}
-.row2 {
-    margin-top: 50px;
-    height: 100%;
-}
-.container-logo > img {
-    width: 100%;
-    height: auto;
-}
-.container-logo {
-    text-align: center;
-    height: 90px;
-    width: 170px;
-}
-.center {
-    text-align: center;
-}
-.no-margin{
-    margin: 0;
-    height: 60%;
 }
 #intro{
     background:url("https://images.unsplash.com/photo-1500673587002-1d2548cfba1b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c1d231a1cfb5fd0d6ea3ae4568ace64&auto=format&fit=crop&w=750&q=80")no-repeat center center fixed;
@@ -78,7 +37,7 @@ body {
     min-height: 350px;
     background-color: white;
     margin-top: 3em;
-    border: 3px solid #9bc1ff;
+    border: 2px solid #9bc1ff;
     padding-top: 1em;
 }
 .servicos-text {
