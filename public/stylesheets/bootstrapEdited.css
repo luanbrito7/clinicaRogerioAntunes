@@ -145,7 +145,7 @@ footer {
     margin-top: 500px;
 }
 #foot {
-    width: 1000px;
+    width: 1020px;
     height: 100%;
     margin: 0 auto;
 }
@@ -178,6 +178,12 @@ textarea.message {
     width: 250px;
 }
 #copyright {
+}
+.copyright {
     float: left;
-    margin-top: 275px;
+    padding-top: 20px;
+}
+.enderecos {
+    float: left;
+    width: 630px;
 }
